@@ -13460,25 +13460,6 @@ Percentage of detected human faces in first 100 dog files 17%
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Downloading: &#34;https://download.pytorch.org/models/vgg16-397923af.pth&#34; to /root/.torch/models/vgg16-397923af.pth
-100%|██████████| 553433881/553433881 [00:06&lt;00:00, 89141543.14it/s] 
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13686,25 +13667,6 @@ Percentage of detected dogs in first 100 dog files 100%
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Downloading: &#34;https://download.pytorch.org/models/inception_v3_google-1a9a5a14.pth&#34; to /root/.torch/models/inception_v3_google-1a9a5a14.pth
-100%|██████████| 108857766/108857766 [00:01&lt;00:00, 86548569.30it/s]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13876,11 +13838,11 @@ Percentage of detected dogs in first 100 human files 0.0%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">validloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">validset</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">trainloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">trainset</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">validloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">validset</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
@@ -13920,21 +13882,6 @@ Percentage of detected dogs in first 100 human files 0.0%
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.5</span>  <span class="c1"># unnormalize</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">((</span><span class="n">img</span> <span class="o">*</span> <span class="mi">256</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">))</span> <span class="c1"># convert from Tensor image</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13964,62 +13911,120 @@ Percentage of detected dogs in first 100 human files 0.0%
 
 </div>
 </div>
+</div>import torch.nn as nn
+import torch.nn.functional as F
+
+# define the CNN architecture
+class Net(nn.Module):
+    ### TODO: choose an architecture, and complete the class
+    def __init__(self):
+        super(Net, self).__init__()
+        ## Define layers of a CNN
+        self.conv0 =nn.Conv2d(3, 32, 3, stride=2,padding = 1) #224
+        self.conv1 =nn.Conv2d(32, 64, 3,stride=2, padding = 1) #112
+        self.conv2 =nn.Conv2d(64, 64, 3,stride=2, padding = 1) #56
+        self.conv3 = nn.Conv2d(64, 128,3,stride=1, padding =1)#28
+        self.conv4=nn.Conv2d(128,128,3, stride=1, padding =1) #14
+
+        
+        self.pool = nn.MaxPool2d(2,2)
+        self.fc1 = nn.Linear(128*14*14, 500)
+        self.fc2 =nn.Linear(500,133)
+        
+        self.dropout= nn.Dropout(p=0.1)
+        
+    
+    def forward(self, x):
+        ## Define forward behavior
+        x= F.relu(self.conv0(x))
+        x=self.pool(x)
+        x= F.relu(self.conv1(x))
+        x=self.pool(x)
+        x=F.relu(self.conv2(x))
+        x=self.pool(x)
+        x=F.relu(self.conv3(x))
+        x=self.pool(x)
+        x=F.relu(self.conv4(x))
+        x=self.pool(x)
+
+        
+        print(x.shape)
+        
+        x=x.view(-1, 128*14*14)
+        x=F.relu(self.fc1(x))
+        x=self.dropout(x)
+        x=F.relu(self.fc2(x))
+
+                               
+
+        return x
+
+#-#-# You so NOT have to modify the code below this line. #-#-#
+
+# instantiate the CNN
+model_scratch = Net()
+
+# move tensors to GPU if CUDA is available
+if use_cuda:
+    model_scratch.cuda()
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#model_scratch</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 
-<span class="c1"># define the CNN architecture</span>
-<span class="k">class</span> <span class="nc">Net</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="c1">### TODO: choose an architecture, and complete the class</span>
+<span class="k">class</span> <span class="nc">Network</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">Net</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="c1">## Define layers of a CNN</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">conv0</span> <span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">padding</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">conv1</span> <span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">conv2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Network</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">stride</span> <span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> 
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> 
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
 
-        
-        <span class="bp">self</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">((</span><span class="mi">128</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">7</span><span class="p">),</span> <span class="mi">500</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">133</span><span class="p">)</span>
-        
-        <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
-        
+                                    <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="o">*</span><span class="mi">14</span><span class="o">*</span><span class="mi">14</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span>
+                                        <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+                                        <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.1</span><span class="p">),</span>
+                                    
+                                        <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span>
+                                        <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+                                        <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.1</span><span class="p">),</span>
+                                                                                
+                                        <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">133</span><span class="p">))</span>
     
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-        <span class="c1">## Define forward behavior</span>
-        <span class="n">x</span><span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv0</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">x</span><span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="c1">#print(x.shape)</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">128</span><span class="o">*</span><span class="mi">14</span><span class="o">*</span><span class="mi">14</span><span class="p">)</span>
+        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
         
-        <span class="c1">##print(x.shape)</span>
-        
-        <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">128</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-                               
-
         <span class="k">return</span> <span class="n">x</span>
 
-<span class="c1">#-#-# You so NOT have to modify the code below this line. #-#-#</span>
-
-<span class="c1"># instantiate the CNN</span>
-<span class="n">model_scratch</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
+<span class="n">model_scratch</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
 
 <span class="c1"># move tensors to GPU if CUDA is available</span>
 <span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
     <span class="n">model_scratch</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+    
 </pre></div>
 
     </div>
@@ -14032,42 +14037,51 @@ Percentage of detected dogs in first 100 human files 0.0%
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Network</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span><span class="n">Network</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-                                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-                                    
-                                    
-                                    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span> <span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-                                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span> 
-                                    <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-                                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-
-                                    <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span>
-                                       <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-                                       <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
-                                       <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span>
-                                       <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
-                                       <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span>
-                                       <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">133</span><span class="p">))</span>
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        
-        <span class="k">return</span> <span class="n">x</span>
-
-<span class="n">model_1</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
-
-<span class="c1"># move tensors to GPU if CUDA is available</span>
-<span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-    <span class="n">model_1</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_scratch</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[18]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Network(
+  (features): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(32, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (3): ReLU()
+    (4): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+    (5): ReLU()
+    (6): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): ReLU()
+    (8): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=1000, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.1)
+    (3): Linear(in_features=1000, out_features=500, bias=True)
+    (4): ReLU()
+    (5): Dropout(p=0.1)
+    (6): Linear(in_features=500, out_features=133, bias=True)
+  )
+)</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -14100,7 +14114,7 @@ Percentage of detected dogs in first 100 human files 0.0%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">ImageFile</span>
@@ -14114,7 +14128,7 @@ Percentage of detected dogs in first 100 human files 0.0%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
@@ -14123,7 +14137,7 @@ Percentage of detected dogs in first 100 human files 0.0%
 <span class="n">criterion_scratch</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
 
 <span class="c1">### TODO: select optimizer</span>
-<span class="n">optimizer_scratch</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model_scratch</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="n">optimizer_scratch</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model_scratch</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span> <span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14141,7 +14155,7 @@ Percentage of detected dogs in first 100 human files 0.0%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">n_epochs</span><span class="p">,</span> <span class="n">loaders</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">use_cuda</span><span class="p">,</span> <span class="n">save_path</span><span class="p">):</span>
@@ -14214,7 +14228,7 @@ Percentage of detected dogs in first 100 human files 0.0%
                 <span class="s1">&#39;valid&#39;</span><span class="p">:</span><span class="n">validloader</span><span class="p">,</span>
                 <span class="s1">&#39;test&#39;</span><span class="p">:</span><span class="n">testloader</span><span class="p">}</span>
 <span class="c1"># train the model</span>
-<span class="n">model_scratch</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">loaders_scratch</span><span class="p">,</span> <span class="n">model_scratch</span><span class="p">,</span> <span class="n">optimizer_scratch</span><span class="p">,</span> 
+<span class="n">model_scratch</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">loaders_scratch</span><span class="p">,</span> <span class="n">model_scratch</span><span class="p">,</span> <span class="n">optimizer_scratch</span><span class="p">,</span> 
                       <span class="n">criterion_scratch</span><span class="p">,</span> <span class="n">use_cuda</span><span class="p">,</span> <span class="s1">&#39;model_scratch.pt&#39;</span><span class="p">)</span>
 
 <span class="c1"># load the model that got the best validation accuracy</span>
@@ -14235,46 +14249,56 @@ Percentage of detected dogs in first 100 human files 0.0%
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch: 1 	Training Loss: 4.890924 	Validation Loss: 4.891363
-Validation loss decreased (inf --&gt; 4.891363).  Saving model ...
-Epoch: 2 	Training Loss: 4.891119 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 3 	Training Loss: 4.891046 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 4 	Training Loss: 4.890703 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 5 	Training Loss: 4.890942 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 6 	Training Loss: 4.890909 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 7 	Training Loss: 4.890814 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 8 	Training Loss: 4.891054 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 9 	Training Loss: 4.891088 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 10 	Training Loss: 4.890773 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 11 	Training Loss: 4.890939 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 12 	Training Loss: 4.890929 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 13 	Training Loss: 4.891108 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 14 	Training Loss: 4.891037 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 15 	Training Loss: 4.891044 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 16 	Training Loss: 4.890701 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 17 	Training Loss: 4.890650 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 18 	Training Loss: 4.891192 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 19 	Training Loss: 4.890720 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
-Epoch: 20 	Training Loss: 4.890838 	Validation Loss: 4.891363
-Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
+<pre>Epoch: 1 	Training Loss: 4.890330 	Validation Loss: 4.890733
+Validation loss decreased (inf --&gt; 4.890733).  Saving model ...
+Epoch: 2 	Training Loss: 4.889524 	Validation Loss: 4.890394
+Validation loss decreased (4.890733 --&gt; 4.890394).  Saving model ...
+Epoch: 3 	Training Loss: 4.888666 	Validation Loss: 4.890078
+Validation loss decreased (4.890394 --&gt; 4.890078).  Saving model ...
+Epoch: 4 	Training Loss: 4.887963 	Validation Loss: 4.889751
+Validation loss decreased (4.890078 --&gt; 4.889751).  Saving model ...
+Epoch: 5 	Training Loss: 4.887103 	Validation Loss: 4.889396
+Validation loss decreased (4.889751 --&gt; 4.889396).  Saving model ...
+Epoch: 6 	Training Loss: 4.886249 	Validation Loss: 4.888949
+Validation loss decreased (4.889396 --&gt; 4.888949).  Saving model ...
+Epoch: 7 	Training Loss: 4.885375 	Validation Loss: 4.888590
+Validation loss decreased (4.888949 --&gt; 4.888590).  Saving model ...
+Epoch: 8 	Training Loss: 4.884122 	Validation Loss: 4.888156
+Validation loss decreased (4.888590 --&gt; 4.888156).  Saving model ...
+Epoch: 9 	Training Loss: 4.882920 	Validation Loss: 4.887563
+Validation loss decreased (4.888156 --&gt; 4.887563).  Saving model ...
+Epoch: 10 	Training Loss: 4.880848 	Validation Loss: 4.886570
+Validation loss decreased (4.887563 --&gt; 4.886570).  Saving model ...
+Epoch: 11 	Training Loss: 4.878021 	Validation Loss: 4.885440
+Validation loss decreased (4.886570 --&gt; 4.885440).  Saving model ...
+Epoch: 12 	Training Loss: 4.873839 	Validation Loss: 4.884181
+Validation loss decreased (4.885440 --&gt; 4.884181).  Saving model ...
+Epoch: 13 	Training Loss: 4.866894 	Validation Loss: 4.883455
+Validation loss decreased (4.884181 --&gt; 4.883455).  Saving model ...
+Epoch: 14 	Training Loss: 4.859414 	Validation Loss: 4.882762
+Validation loss decreased (4.883455 --&gt; 4.882762).  Saving model ...
+Epoch: 15 	Training Loss: 4.849302 	Validation Loss: 4.874014
+Validation loss decreased (4.882762 --&gt; 4.874014).  Saving model ...
+Epoch: 16 	Training Loss: 4.824255 	Validation Loss: 4.843791
+Validation loss decreased (4.874014 --&gt; 4.843791).  Saving model ...
+Epoch: 17 	Training Loss: 4.748289 	Validation Loss: 4.755966
+Validation loss decreased (4.843791 --&gt; 4.755966).  Saving model ...
+Epoch: 18 	Training Loss: 4.639897 	Validation Loss: 4.702568
+Validation loss decreased (4.755966 --&gt; 4.702568).  Saving model ...
+Epoch: 19 	Training Loss: 4.579266 	Validation Loss: 4.643973
+Validation loss decreased (4.702568 --&gt; 4.643973).  Saving model ...
+Epoch: 20 	Training Loss: 4.520002 	Validation Loss: 4.588976
+Validation loss decreased (4.643973 --&gt; 4.588976).  Saving model ...
+Epoch: 21 	Training Loss: 4.478488 	Validation Loss: 4.577756
+Validation loss decreased (4.588976 --&gt; 4.577756).  Saving model ...
+Epoch: 22 	Training Loss: 4.438375 	Validation Loss: 4.571736
+Validation loss decreased (4.577756 --&gt; 4.571736).  Saving model ...
+Epoch: 23 	Training Loss: 4.404701 	Validation Loss: 4.567313
+Validation loss decreased (4.571736 --&gt; 4.567313).  Saving model ...
+Epoch: 24 	Training Loss: 4.363555 	Validation Loss: 4.548871
+Validation loss decreased (4.567313 --&gt; 4.548871).  Saving model ...
+Epoch: 25 	Training Loss: 4.325028 	Validation Loss: 4.544503
+Validation loss decreased (4.548871 --&gt; 4.544503).  Saving model ...
 </pre>
 </div>
 </div>
@@ -14288,7 +14312,7 @@ Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##model_1 = train(25, loaders_scratch, model_1, optimizer_scratch,criterion_scratch, use_cuda, &#39;model_1.pt&#39;)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## model_1 = train(25, loaders_scratch, model_1, optimizer_scratch,criterion_scratch, use_cuda, &#39;model_1.pt&#39;)</span>
 </pre></div>
 
     </div>
@@ -14306,7 +14330,7 @@ Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">loaders</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">use_cuda</span><span class="p">):</span>
@@ -14356,10 +14380,10 @@ Validation loss decreased (4.891363 --&gt; 4.891363).  Saving model ...
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test Loss: 4.890717
+<pre>Test Loss: 4.486234
 
 
-Test Accuracy:  0% ( 7/836)
+Test Accuracy:  4% (38/836)
 </pre>
 </div>
 </div>
@@ -14701,66 +14725,66 @@ Test Accuracy:  0% ( 7/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch: 1 	Training Loss: 4.914410 	Validation Loss: 4.819419
-Validation loss decreased (inf --&gt; 4.819419).  Saving model ...
-Epoch: 2 	Training Loss: 4.835832 	Validation Loss: 4.756318
-Validation loss decreased (4.819419 --&gt; 4.756318).  Saving model ...
-Epoch: 3 	Training Loss: 4.768294 	Validation Loss: 4.683173
-Validation loss decreased (4.756318 --&gt; 4.683173).  Saving model ...
-Epoch: 4 	Training Loss: 4.698674 	Validation Loss: 4.606339
-Validation loss decreased (4.683173 --&gt; 4.606339).  Saving model ...
-Epoch: 5 	Training Loss: 4.623065 	Validation Loss: 4.517198
-Validation loss decreased (4.606339 --&gt; 4.517198).  Saving model ...
-Epoch: 6 	Training Loss: 4.529366 	Validation Loss: 4.415158
-Validation loss decreased (4.517198 --&gt; 4.415158).  Saving model ...
-Epoch: 7 	Training Loss: 4.442255 	Validation Loss: 4.304906
-Validation loss decreased (4.415158 --&gt; 4.304906).  Saving model ...
-Epoch: 8 	Training Loss: 4.326868 	Validation Loss: 4.168145
-Validation loss decreased (4.304906 --&gt; 4.168145).  Saving model ...
-Epoch: 9 	Training Loss: 4.208838 	Validation Loss: 4.016368
-Validation loss decreased (4.168145 --&gt; 4.016368).  Saving model ...
-Epoch: 10 	Training Loss: 4.096549 	Validation Loss: 3.860743
-Validation loss decreased (4.016368 --&gt; 3.860743).  Saving model ...
-Epoch: 11 	Training Loss: 3.950141 	Validation Loss: 3.696755
-Validation loss decreased (3.860743 --&gt; 3.696755).  Saving model ...
-Epoch: 12 	Training Loss: 3.795413 	Validation Loss: 3.514663
-Validation loss decreased (3.696755 --&gt; 3.514663).  Saving model ...
-Epoch: 13 	Training Loss: 3.643494 	Validation Loss: 3.337723
-Validation loss decreased (3.514663 --&gt; 3.337723).  Saving model ...
-Epoch: 14 	Training Loss: 3.487802 	Validation Loss: 3.147022
-Validation loss decreased (3.337723 --&gt; 3.147022).  Saving model ...
-Epoch: 15 	Training Loss: 3.316491 	Validation Loss: 2.966749
-Validation loss decreased (3.147022 --&gt; 2.966749).  Saving model ...
-Epoch: 16 	Training Loss: 3.172851 	Validation Loss: 2.789871
-Validation loss decreased (2.966749 --&gt; 2.789871).  Saving model ...
-Epoch: 17 	Training Loss: 3.027710 	Validation Loss: 2.640576
-Validation loss decreased (2.789871 --&gt; 2.640576).  Saving model ...
-Epoch: 18 	Training Loss: 2.885435 	Validation Loss: 2.487974
-Validation loss decreased (2.640576 --&gt; 2.487974).  Saving model ...
-Epoch: 19 	Training Loss: 2.752088 	Validation Loss: 2.353943
-Validation loss decreased (2.487974 --&gt; 2.353943).  Saving model ...
-Epoch: 20 	Training Loss: 2.647899 	Validation Loss: 2.204557
-Validation loss decreased (2.353943 --&gt; 2.204557).  Saving model ...
-Epoch: 21 	Training Loss: 2.493487 	Validation Loss: 2.087392
-Validation loss decreased (2.204557 --&gt; 2.087392).  Saving model ...
-Epoch: 22 	Training Loss: 2.401141 	Validation Loss: 1.989393
-Validation loss decreased (2.087392 --&gt; 1.989393).  Saving model ...
-Epoch: 23 	Training Loss: 2.314933 	Validation Loss: 1.890190
-Validation loss decreased (1.989393 --&gt; 1.890190).  Saving model ...
-Epoch: 24 	Training Loss: 2.225161 	Validation Loss: 1.786393
-Validation loss decreased (1.890190 --&gt; 1.786393).  Saving model ...
-Epoch: 25 	Training Loss: 2.127585 	Validation Loss: 1.715852
-Validation loss decreased (1.786393 --&gt; 1.715852).  Saving model ...
-Epoch: 26 	Training Loss: 2.044669 	Validation Loss: 1.639990
-Validation loss decreased (1.715852 --&gt; 1.639990).  Saving model ...
-Epoch: 27 	Training Loss: 1.963664 	Validation Loss: 1.554826
-Validation loss decreased (1.639990 --&gt; 1.554826).  Saving model ...
-Epoch: 28 	Training Loss: 1.901552 	Validation Loss: 1.499977
-Validation loss decreased (1.554826 --&gt; 1.499977).  Saving model ...
-Epoch: 29 	Training Loss: 1.845999 	Validation Loss: 1.441725
-Validation loss decreased (1.499977 --&gt; 1.441725).  Saving model ...
-Epoch: 30 	Training Loss: 1.802573 	Validation Loss: 1.404182
-Validation loss decreased (1.441725 --&gt; 1.404182).  Saving model ...
+<pre>Epoch: 1 	Training Loss: 4.913499 	Validation Loss: 4.818717
+Validation loss decreased (inf --&gt; 4.818717).  Saving model ...
+Epoch: 2 	Training Loss: 4.832933 	Validation Loss: 4.741449
+Validation loss decreased (4.818717 --&gt; 4.741449).  Saving model ...
+Epoch: 3 	Training Loss: 4.765131 	Validation Loss: 4.669922
+Validation loss decreased (4.741449 --&gt; 4.669922).  Saving model ...
+Epoch: 4 	Training Loss: 4.685153 	Validation Loss: 4.588229
+Validation loss decreased (4.669922 --&gt; 4.588229).  Saving model ...
+Epoch: 5 	Training Loss: 4.606099 	Validation Loss: 4.488045
+Validation loss decreased (4.588229 --&gt; 4.488045).  Saving model ...
+Epoch: 6 	Training Loss: 4.508540 	Validation Loss: 4.379740
+Validation loss decreased (4.488045 --&gt; 4.379740).  Saving model ...
+Epoch: 7 	Training Loss: 4.413136 	Validation Loss: 4.251529
+Validation loss decreased (4.379740 --&gt; 4.251529).  Saving model ...
+Epoch: 8 	Training Loss: 4.298107 	Validation Loss: 4.121352
+Validation loss decreased (4.251529 --&gt; 4.121352).  Saving model ...
+Epoch: 9 	Training Loss: 4.166259 	Validation Loss: 3.963071
+Validation loss decreased (4.121352 --&gt; 3.963071).  Saving model ...
+Epoch: 10 	Training Loss: 4.028728 	Validation Loss: 3.780569
+Validation loss decreased (3.963071 --&gt; 3.780569).  Saving model ...
+Epoch: 11 	Training Loss: 3.885133 	Validation Loss: 3.602474
+Validation loss decreased (3.780569 --&gt; 3.602474).  Saving model ...
+Epoch: 12 	Training Loss: 3.742164 	Validation Loss: 3.409170
+Validation loss decreased (3.602474 --&gt; 3.409170).  Saving model ...
+Epoch: 13 	Training Loss: 3.582063 	Validation Loss: 3.233144
+Validation loss decreased (3.409170 --&gt; 3.233144).  Saving model ...
+Epoch: 14 	Training Loss: 3.429039 	Validation Loss: 3.053297
+Validation loss decreased (3.233144 --&gt; 3.053297).  Saving model ...
+Epoch: 15 	Training Loss: 3.269679 	Validation Loss: 2.866845
+Validation loss decreased (3.053297 --&gt; 2.866845).  Saving model ...
+Epoch: 16 	Training Loss: 3.106914 	Validation Loss: 2.703154
+Validation loss decreased (2.866845 --&gt; 2.703154).  Saving model ...
+Epoch: 17 	Training Loss: 2.972499 	Validation Loss: 2.521669
+Validation loss decreased (2.703154 --&gt; 2.521669).  Saving model ...
+Epoch: 18 	Training Loss: 2.841875 	Validation Loss: 2.414183
+Validation loss decreased (2.521669 --&gt; 2.414183).  Saving model ...
+Epoch: 19 	Training Loss: 2.706150 	Validation Loss: 2.239733
+Validation loss decreased (2.414183 --&gt; 2.239733).  Saving model ...
+Epoch: 20 	Training Loss: 2.571981 	Validation Loss: 2.112297
+Validation loss decreased (2.239733 --&gt; 2.112297).  Saving model ...
+Epoch: 21 	Training Loss: 2.445821 	Validation Loss: 2.020294
+Validation loss decreased (2.112297 --&gt; 2.020294).  Saving model ...
+Epoch: 22 	Training Loss: 2.359697 	Validation Loss: 1.902368
+Validation loss decreased (2.020294 --&gt; 1.902368).  Saving model ...
+Epoch: 23 	Training Loss: 2.256907 	Validation Loss: 1.812383
+Validation loss decreased (1.902368 --&gt; 1.812383).  Saving model ...
+Epoch: 24 	Training Loss: 2.161690 	Validation Loss: 1.726887
+Validation loss decreased (1.812383 --&gt; 1.726887).  Saving model ...
+Epoch: 25 	Training Loss: 2.102193 	Validation Loss: 1.651882
+Validation loss decreased (1.726887 --&gt; 1.651882).  Saving model ...
+Epoch: 26 	Training Loss: 2.004429 	Validation Loss: 1.572629
+Validation loss decreased (1.651882 --&gt; 1.572629).  Saving model ...
+Epoch: 27 	Training Loss: 1.925595 	Validation Loss: 1.501930
+Validation loss decreased (1.572629 --&gt; 1.501930).  Saving model ...
+Epoch: 28 	Training Loss: 1.871443 	Validation Loss: 1.454764
+Validation loss decreased (1.501930 --&gt; 1.454764).  Saving model ...
+Epoch: 29 	Training Loss: 1.795243 	Validation Loss: 1.399598
+Validation loss decreased (1.454764 --&gt; 1.399598).  Saving model ...
+Epoch: 30 	Training Loss: 1.745101 	Validation Loss: 1.335810
+Validation loss decreased (1.399598 --&gt; 1.335810).  Saving model ...
 </pre>
 </div>
 </div>
@@ -14812,10 +14836,10 @@ Validation loss decreased (1.441725 --&gt; 1.404182).  Saving model ...
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test Loss: 1.362845
+<pre>Test Loss: 1.349502
 
 
-Test Accuracy: 71% (594/836)
+Test Accuracy: 72% (602/836)
 </pre>
 </div>
 </div>
@@ -14834,7 +14858,7 @@ Test Accuracy: 71% (594/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: Write a function that takes a path to an image as input</span>
@@ -14893,7 +14917,7 @@ Test Accuracy: 71% (594/836)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### TODO: Write your algorithm.</span>
@@ -14938,14 +14962,21 @@ Test Accuracy: 71% (594/836)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> (Three possible points for improvement)</p>
+<p><strong>Answer:</strong> (Three possible points for improvement)
+72% accuracy is ok but can be improved.</p>
+<ol>
+<li>I could have used for epochs for training model as the training and validation loss was decreasing.</li>
+<li>More models like Resnet to be tested </li>
+<li>More tweaks with optimisation and learning rate to check the speed of convergence</li>
+<li>Training data can be increased as well</li>
+</ol>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## TODO: Execute your algorithm from Step 6 on</span>
@@ -14998,7 +15029,7 @@ Test Accuracy: 71% (594/836)
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>you look like a .....Chinese crested
+<pre>you look like a .....Dachshund
 hello, human!
 </pre>
 </div>
@@ -15025,7 +15056,7 @@ hello, human!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>you look like a .....Xoloitzcuintli
+<pre>you look like a .....Dachshund
 hello, human!
 </pre>
 </div>
@@ -15052,7 +15083,7 @@ hello, human!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>you look like a .....Afghan hound
+<pre>you look like a .....Black russian terrier
 </pre>
 </div>
 </div>
@@ -15078,7 +15109,7 @@ hello, human!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>this is ... Boxer
+<pre>this is ... Bullmastiff
 </pre>
 </div>
 </div>
@@ -15141,7 +15172,7 @@ hello, human!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">glob</span> <span class="k">import</span> <span class="n">glob</span>
@@ -15190,7 +15221,7 @@ hello, human!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>you look like a .....Dogue de bordeaux
+<pre>you look like a .....Afghan hound
 </pre>
 </div>
 </div>
@@ -15295,7 +15326,7 @@ hello, human!
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>you look like a .....Chinese crested
+<pre>you look like a .....Dogue de bordeaux
 </pre>
 </div>
 </div>
